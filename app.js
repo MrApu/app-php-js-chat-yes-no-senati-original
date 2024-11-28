@@ -114,7 +114,13 @@ async function putData() {
     }
 }
 
+// Asociar la función PUT al botón correspondiente
+let botonPut = document.querySelector(".btn-outline-warning");
+botonPut.addEventListener("click", function () {
+    putData();
+});
 
+// Función para eliminar datos con DELETE
 async function deleteData() {
     try {
         const respuesta = await fetch(`${apiUrl}?id=123`, {
@@ -126,6 +132,12 @@ async function deleteData() {
         console.log("Error al momento de hacer la petición DELETE: ", error);
     }
 }
+
+// Asociar la función DELETE al botón correspondiente
+let botonDelete = document.querySelector(".btn-outline-info");
+botonDelete.addEventListener("click", function () {
+    deleteData();
+});
 
 
 
